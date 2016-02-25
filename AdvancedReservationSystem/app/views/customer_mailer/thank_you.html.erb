@@ -1,0 +1,9 @@
+<h1>Your Flight has been Reserved!</h1>
+
+<p>Dear <%= @customer.name %></p>
+
+<p>Your flight reservation for <%= @customer.reservations.last.flight_id %> from <%= @from_location %> to <%= @to_location %>, has been successful.</p>
+
+<p>Please ensure to arrive early at the aiport before your flight, it would be a shame if you were to miss it!</p>
+
+<p>Thank you for choosing to travel with us and we hope you have a great holiday!</p>

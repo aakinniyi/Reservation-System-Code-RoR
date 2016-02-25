@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  eventdate: 2015-08-17 10:38:45
+  arrival_airport_id: 1
+  description: MyText
+  price: 1.5
+  eventimage: MyString
+
+two:
+  name: MyString
+  eventdate: 2015-08-17 10:38:45
+  arrival_airport_id: 1
+  description: MyText
+  price: 1.5
+  eventimage: MyString

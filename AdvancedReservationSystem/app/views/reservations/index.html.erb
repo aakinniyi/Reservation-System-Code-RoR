@@ -1,0 +1,33 @@
+<div class="col-md-10 col-md-offset-1">
+
+	<h1>Your Flight Reservations</h1>
+
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Customer No</th>
+				<th>Flight</th>
+				<th colspan="2"></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @reservations.each do |reservation| %>
+			<tr>
+				<td><%= reservation.user_id %></td>
+				<td><%= reservation.flight_id %></td>
+				<td><%= link_to 'Show', reservation, class: 'btn btn-table-action btn-success' %></td>
+				<td><%= link_to 'Edit', edit_reservation_path(reservation), class: 'btn btn-table-action btn-info' %></td>
+			</tr>
+			<% end %>
+		</tbody>
+				
+	</table>
+
+	<br>
+	
+		<%= link_to 'Make New Reservation', flights_path %>
+
+	<br><br><br><br><br>
+
+</div>

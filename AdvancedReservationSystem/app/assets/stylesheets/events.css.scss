@@ -1,0 +1,19 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//style for event page
+
+.eventdescription{
+	max-height:10em;
+	text-overflow:hidden;
+	overflow: hidden;
+	white-space: wrap;
+	}
+
+#eventsection{
+    border-bottom: 5px solid #415f00;
+    border-radius: 0px;
+    padding-top: 2em;
+    padding-top: 2em;
+}

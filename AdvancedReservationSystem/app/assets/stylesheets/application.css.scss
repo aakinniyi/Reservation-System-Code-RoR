@@ -1,0 +1,203 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body{
+	margin:0 auto;
+	font-family: Helvetica, Geneva, sans-serif;
+	font-size: small;
+	font-color: #000;
+}
+
+//sign-up and login top menu bar stlyling
+topbar{
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	background-color: #75ab00;
+	width: 100%;
+	top:0px;
+	height:3em;
+	position:fixed;
+
+	p{
+		color:#ffffff;
+		padding-right:5em;
+		padding-left:5em;
+	}
+
+	a:link, a:visited {
+		text-decoration: none;
+		color: #ffffff;
+		padding-right: 0.4em;
+		padding-left: 0.4em;
+		padding-top: 1em;
+		padding-bottom: 1.2em;
+	}
+
+	a:hover, a:active {
+		background-color: #415f00;
+	}
+
+}
+
+//header styling
+
+header{
+	padding-top: 5em;
+	padding-bottom: 0.5em;
+	background-color: #dddddd;
+
+	h1, h2{
+		text-align: center;
+		color: #222222;
+		padding-top: 0.2em
+	}
+
+	.logo {
+		text-align:center;
+	}
+}
+
+
+//nav menu styling
+
+nav {
+	width: auto;
+	margin:0 auto;
+	text-align: center;
+	background: #75ab00;
+	ul ul {
+		display: none;
+	}
+	ul li:hover > ul {
+		display: block;
+	}
+	ul {
+		background: #75ab00;
+		list-style: none;
+		position: relative;
+		display: inline-block;
+	}
+	ul:after {
+		content: ""; clear: both;
+	}
+	ul li {
+		text-align: center;
+		display:inline-block;
+	}
+	ul li:hover {
+		background: #415f00;
+	}
+	ul li:hover a {
+		color: #ffffff;
+	}
+	ul li a {
+		display: block;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 13px;
+		padding-left: 0.8em;
+		padding-right: 0.8em;
+		padding-top: 1.5em;
+		padding-bottom: 1.5em;
+		color: #ffffff;
+	}
+}
+
+//second level nav menu
+nav {
+	ul ul {
+		background: #75ab00;
+		border-radius: 0px; padding: 0;
+		position: absolute;
+		top: 100%;
+	}
+	ul ul li {
+		float: none;
+		border-top: 1px solid #415f00;
+		border-bottom: 1px solid #415f00;
+		position: relative;
+	}
+	ul ul li a {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+		color: #ffffff;
+	}
+
+	a:hover, a:active, .active {
+		background: #415f00; 
+	}
+	a:link, a:visited {
+		text-decoration: none;
+		color: #ffffff;
+	}
+	ul:after {
+		content: ""; clear: both; display: block;
+	}
+}
+
+//third level nav menu
+nav ul ul ul {
+	position: absolute;
+	right: 102%;
+	top: 1.5em;
+	width:100%;
+}
+
+
+//footer styling - sticks to the bottom
+
+footer{
+	width:100%;
+	text-align: center;
+	padding-bottom: 1em;
+	padding-top: 1em;
+	background-color: #dddddd;
+	bottom:0px;
+	position:fixed;
+}
+
+section{
+	padding-right: 2em;
+	padding-left: 2em;
+	padding-top: 1em;
+}
+
+#main {
+	width:95%;
+	margin:0 auto;
+	padding-bottom:5em;
+
+}
+
+#notice {
+	padding-top: 0.5em;
+	color: #75ab00;
+	float:right;
+}
+.notice-right {
+	float:right;
+	padding-bottom: 0.5em;
+}
+
+.table-hover th {
+   background-color: #75ab00;
+ }
+ 
+ .table th {
+    background-color: #75ab00;
+  }

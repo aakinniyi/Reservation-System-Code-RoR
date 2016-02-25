@@ -1,0 +1,48 @@
+<div class="row customer_details">
+	<div class="col-md-6 col-md-offset-3 well">
+
+		<%= form_for(@extra_reservation) do |f| %>
+
+		<h3>Would you Like to to Reserve Hotel?</h3>
+
+		<% if @extra_reservation.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@extra_reservation.errors.count, "error") %> prohibited this extra_reservation from being saved:</h2>
+
+			<ul>
+				<% @extra_reservation.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
+
+
+		<div class="form-group">
+			<%= f.label :hotel_list_id %><br>
+			<%= f.collection_select :hotel_list_id, HotelList.order(:name), :id, :name, :include_blank => "Select one Hotel" %>
+		</div>
+  
+		<div class="form-group">
+			<%= f.label :room %><br>
+			<%= f.select :room, ["Single Room for One Person", "Double Room for Two", "Family Room for upto 5 people"], :include_blank => "Select Preferred Room Type" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :checkin %><br>
+			<%= f.datetime_select :checkin %>
+		</div>
+		<div class="form-group">
+			<%= f.label :checkout %><br>
+			<%= f.datetime_select :checkout %>
+		</div>
+		<div class="form-group">
+			<%= f.label :availability %><br>
+			<%= f.text_field :availability, :value => "Hotel is Available", :readonly => true %>
+		</div>
+
+		<div class="actions col-md-4 col-md-offset-4">
+			<%= f.submit "Save and Continue" %>
+		</div>
+		<% end %>
+	</div>
+</div>

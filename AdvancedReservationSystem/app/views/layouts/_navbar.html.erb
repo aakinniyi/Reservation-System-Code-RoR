@@ -1,0 +1,9 @@
+<nav>
+	<ul>
+		<li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+		<li class="<%= 'active' if current_page?(flights_path)%>"><%= link_to "New Flight", flights_path %></li>
+		<li class="<%= 'active' if current_page?(reservations_path)%>"><%= link_to "Fight Reservations", reservations_path %></li>
+		<li class="<%= 'active' if current_page?(extra_reservations_path)%>"><%= link_to "Extra Reservations", extra_reservations_path %></li>
+		<li class="<%= 'active' if current_page?(events_path)%>"><%= link_to "Events", events_path %></li>
+	</ul>
+</nav>

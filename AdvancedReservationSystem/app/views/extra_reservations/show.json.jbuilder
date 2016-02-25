@@ -1,0 +1,1 @@
+json.extract! @extra_reservation, :id, :user_id, :hotel_list_id, :, :room, :checkin, :checkout, :availability, :arrival_airport_id, :otherdestination, :pickup, :numberofpassanger, :attraction_id, :dayoftheweek, :tour_id, :dayoftheweek, :numberoftourist, :restaurant_id, :visitingdate, :numberofguest, :specialrequirement, :additionalinfo, :created_at, :updated_at

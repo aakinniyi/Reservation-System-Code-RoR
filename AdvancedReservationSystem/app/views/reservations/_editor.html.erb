@@ -1,0 +1,70 @@
+<div class="row customer_details">
+	<div class="col-md-8 col-md-offset-2">
+
+		<div class="row">
+			<h3>Reservation Cannot be Changed</h3>
+			<p>Alternatively, You can Cancle and Book</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 well booking">		  
+			  
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Reservation Number:</th>
+						<th>Departing Airport</th>
+						<th>Departing Airport Code</th>
+						<th>Arrival Airport</th>
+						<th>Arrival Airport Code</th>
+						<th>Departure Date</th>
+						<th>Departure Time</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td><%= @reservation.id %></td>
+						<td><%= @reservation.flight.departure_airport.name %></td>
+						<td><%= @reservation.flight.departure_airport.code %></td>
+						<td><%= @reservation.flight.arrival_airport.name %></td>
+						<td><%= @reservation.flight.arrival_airport.code %></td>
+						<td><%= @reservation.flight.departure_date.strftime("%d/%m/%Y") %></td>
+						<td><%= @reservation.flight.departure_date.strftime("%H:%M") %></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Travellers details</h3>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Address</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<% @reservation.customers.each do |c| %>
+					<tr>
+						<td><%= c.name %></td>
+						<td><%= c.email %></td>
+						<td><%= c.address %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			
+			</table>	
+					
+			<%= link_to 'Show', @reservation, class: 'btn btn-table-action btn-info' %> |
+			<%= link_to 'Back', reservations_path, class: 'btn btn-table-action btn-success' %>
+
+					  
+		</div>
+	</div>
+
+
+
+

@@ -1,0 +1,35 @@
+<div class="row customer_details">
+	<div class="col-md-6 col-md-offset-3 well">
+		<%= form_for @extra_reservation, url: wizard_path, :method => :put do |f| %>
+		
+		<h3>Would you Like to to Reserve Tour and Attraction?</h3>
+
+		<div class="form-group">
+			<%= f.label :attraction_id %><br>
+			<%= f.collection_select :attraction_id, Attraction.order(:name), :id, :name, :include_blank => "Select one Attraction" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :dayoftheweek, 'Day of the Week' %><br>
+			<%= f.select :dayoftheweek, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], :include_blank => "Select Day of the Week" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :tour_id %><br>
+			<%= f.collection_select :tour_id, Tour.order(:name), :id, :name, :include_blank => "Select one Tour" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :dayoftheweek, 'Day of the Week' %><br>
+			<%= f.select :dayoftheweek, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], :include_blank => "Select Day of the Week" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :numberoftourist, 'Number of Tourist' %><br>
+			<%= f.select :numberoftourist, ["1", "2", "3", "4", "5", "6", "7", "8", "9"], :include_blank => "Select Number of Tourist" %>
+		</div>
+  
+		<div class="actions col-md-8 col-md-offset-2">
+			<%= f.submit "Save and Continue" %>
+			or <%= link_to "Skip this Service", next_wizard_path %>
+		</div>
+		<% end %>
+		
+	</div>
+</div>

@@ -1,0 +1,78 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+* {
+	box-sizing: border-box;
+}
+
+/* Header */
+
+.rm-p{
+	padding-left: 0!important;
+}
+
+
+/* New Reservation Page */
+
+.search{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.search-results{
+	margin-bottom: 50px;
+}
+
+h3{
+	border-bottom: 1px solid #000;
+	line-height: 1.5em;
+	margin-top: 0;
+	margin-bottom: 30px;
+}
+
+/* customer details page */
+
+.customer_details{
+	margin-bottom: 50px;
+}
+
+.form-group{
+	padding-right:1;
+	padding-bottom:1em;
+	padding-left:1em;
+	padding-bottom:1em;
+}
+
+
+
+.flight-details{
+}
+
+/* New Reservation Page */
+
+.customer-box{
+	padding-bottom: 40px;
+}
+
+.control-label{
+	text-align: left;
+}
+
+/* Show Reservation Page */
+
+h1{
+	text-align: center;
+}
+
+.reservation{
+	margin-bottom: 10%;
+}
+
+#error_explanation{
+	color: red;
+}
+
+
+
+
+
+

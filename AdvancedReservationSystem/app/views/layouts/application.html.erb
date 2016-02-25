@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Advanced Reservation System | <%=yield(:title)%></title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	
+	<%= render 'layouts/topbar' %>
+	<%= render 'layouts/header' %>
+	<navbar class="navclass">
+		<%= render 'layouts/navbar' %>
+	</navbar>
+	
+	<section class="container-fluid">
+		<% flash.each do |message_type, message| %>
+		<section class="alert alert-<%= message_type%> alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<ul><li><%= message %> </li> </ul>
+		</section>
+		<% end %>	
+		<!-- <p class="alert"><%= alert %></p>	 -->
+	</section>
+
+	<section id="main">	
+		<%= yield %>
+	</section>
+	
+	<%= render 'layouts/footer' %>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<div class="row search">
+
+	<div class="col-sm-6 col-sm-offset-3 well">
+		<h3>Search for flight</h3>
+
+		<%= form_tag(flights_path, method: "get") do %>
+
+		<div class="form-group col-md-6 rm-p">
+			<%= label_tag(:departure_airport_id, "Departure Airport:") %>
+			<%= select_tag(:departure_airport_id, options_for_select(@airports, @departure_airport), class: "form-control") %>
+		</div>
+
+		<div class="form-group col-md-6">
+			<%= label_tag(:arrival_airport_id, "Arrival Airport:") %>
+			<%= select_tag(:arrival_airport_id, options_for_select(@airports, @arrival_airport), class: "form-control", id: "arrival-select") %>
+		</div>
+
+		<div class="form-group col-md-6 rm-p">
+			<%= label_tag(:departure_date, "Date:") %>
+			<%= select_tag(:departure_date, options_for_select(@dates, @depart_date), class: "form-control") %>
+		</div>
+
+		<div class="form-group col-md-6" >
+			<%= label_tag(:customers, "Number of Travellers:") %>
+			<%= select_tag(:customers, options_for_select(@customer_options, @customers), class: "form-control") %>
+		</div>
+		
+		<div class="form-group col-md-6 rm-p">
+			<%= label_tag(:airline_id, "Preferred Airline:") %>
+			<%= select_tag(:airline_id, options_for_select(@airlines, @airlines), class: "form-control", :include_blank => "Select Preferred Airline") %>
+		</div>
+
+		<%= submit_tag "Search", class: "btn btn-success col-md-3 col-md-offset-5" %>
+		<% end %>
+	</div>
+</div>
+
+
+<% unless @flights.empty? %>
+<div class="row search-results">
+<h1>Flight Search Result</h1>
+	<div class="col-md-10 col-md-offset-1 well">
+		<h3>Choose a flight</h3>
+
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th></th>
+					<th>Flight No:</th>
+					<th>Airline</th>
+					<th>Departure City</th>
+					<th>Arrival City</th>
+					<th>Departure Date</th>
+					<th>Departure Time</th>
+					<th>Duration</th>
+					<th>Price</th>
+					<th>Availability</th>
+					<th colspan="3"></th>
+				</tr>
+			</thead>
+
+			<%= form_tag(new_reservation_path, method: "get") do %>
+			<tbody>
+				<% @flights.each do |flight| %>
+				<tr>
+					<td><%= radio_button_tag(:flight_id, flight.id,class: "flight_select")  %></td>
+					<td><%= flight.id %></td>
+					<td><%= flight.airline.name %></td>
+					<td><%= flight.departure_airport.city %></td>
+					<td><%= flight.arrival_airport.city %></td>
+					<td><%= flight.departure_date.strftime("%d/%m/%Y") %></td>
+					<td><%= flight.departure_date.strftime("%H:%M") %></td>
+					<td><%= flight.duration %></td>
+					<td><%= flight.price %></td>
+					<td><%= flight.availability %></td>
+					<td><%= link_to 'Show', flight %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+		
+		<%= hidden_field_tag(:customers, params[:customers]) %>
+		<%= submit_tag"Continue", class: "btn btn-success col-md-3 col-md-offset-5" %>
+		<% end %>
+
+	</div>
+	
+	<br>
+	
+</div>
+<% end %>

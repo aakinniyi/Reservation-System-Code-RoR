@@ -1,0 +1,14 @@
+<h1>Upcoming Events</h1>
+<section>
+	<% @events.each do |event| %>
+	<article id="eventsection">
+		<h3><%= event.name %></h3>
+		<h4><%= event.arrival_airport_id %></h4>
+		<strong><%= event.eventdate %></strong> | <%= link_to 'View Event', event %> <br>
+		<p class="eventdescription"><%= event.description %></p>
+		<!-- &#58; = :, &pound; = £ -->
+		<h4>Event Fee&#58; &pound;<%= event.price %></h4>
+
+	</article>
+	<% end %>
+</section>

@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  hotel_list_id: 1
+  : MyString
+  room: MyString
+  checkin: 2015-08-18 23:40:30
+  checkout: 2015-08-18 23:40:30
+  availability: MyString
+  arrival_airport_id: 1
+  otherdestination: MyString
+  pickup: 2015-08-18 23:40:30
+  numberofpassanger: 1
+  attraction_id: 1
+  dayoftheweek: MyString
+  tour_id: 1
+  dayoftheweek: MyString
+  numberoftourist: 1
+  restaurant_id: 1
+  visitingdate: 2015-08-18 23:40:30
+  numberofguest: 1
+  specialrequirement: MyString
+  additionalinfo: MyText
+
+two:
+  user_id: 1
+  hotel_list_id: 1
+  : MyString
+  room: MyString
+  checkin: 2015-08-18 23:40:30
+  checkout: 2015-08-18 23:40:30
+  availability: MyString
+  arrival_airport_id: 1
+  otherdestination: MyString
+  pickup: 2015-08-18 23:40:30
+  numberofpassanger: 1
+  attraction_id: 1
+  dayoftheweek: MyString
+  tour_id: 1
+  dayoftheweek: MyString
+  numberoftourist: 1
+  restaurant_id: 1
+  visitingdate: 2015-08-18 23:40:30
+  numberofguest: 1
+  specialrequirement: MyString
+  additionalinfo: MyText

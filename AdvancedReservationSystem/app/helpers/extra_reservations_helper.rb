@@ -1,0 +1,2 @@
+module ExtraReservationsHelper
+end

@@ -1,0 +1,106 @@
+<div class="row">
+	<h1> Extra Reservation Details </h1>
+	<div class="col-md-8 col-md-offset-2 well booking">
+		<p>
+			<strong>Your Customer ID:</strong>
+			<%= @extra_reservation.user_id %>
+		</p>
+		<p>
+			<strong>Extra Reservation ID:</strong>
+			<%= @extra_reservation.id %>
+		</p>
+
+		<h3>Hotel Reservation</h3>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Hotel</th>
+					<th>Room</th>
+					<th>Check in</th>
+					<th>Check out</th>
+					<th>Availability</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><%= @extra_reservation.hotel_list_id %></td>
+					<td><%= @extra_reservation.room %></td>
+					<td><%= @extra_reservation.checkin %></td>
+					<td><%= @extra_reservation.checkout %></td>
+					<td><%= @extra_reservation.availability %></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3>Taxi Reservation</h3>	
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Arrival Airport</th>
+					<th>Destination</th>
+					<th>Pickup Time</th>
+					<th>Number of Passanger(s)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><%= @extra_reservation.arrival_airport_id %></td>
+					<td><%= @extra_reservation.otherdestination %></td>
+					<td><%= @extra_reservation.pickup %></td>
+					<td><%= @extra_reservation.numberofpassanger %></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3>Tour and Attraction Reservation</h3>	
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Attraction</th>
+					<th>Day of the week</th>
+					<th>Tour</th>
+					<th>Day of the week</th>
+					<th>Number of Tourist</th>
+				</tr>
+			</thead>
+			<tbody>	
+				<tr>
+					<td><%= @extra_reservation.attraction_id %></td>
+					<td><%= @extra_reservation.dayoftheweek %></td>
+					<td><%= @extra_reservation.tour_id %></td>
+					<td><%= @extra_reservation.dayoftheweek %></td>
+					<td><%= @extra_reservation.numberoftourist %></td>
+				</tr>
+			</tbody>	
+		</table>
+
+		<h3>Restaurant Reservation</h3>	
+		<table class="table table-hover">	
+			<thead>
+				<tr>
+					<th>Restaurant</th>
+					<th>Visiting Date</th>
+					<th>Number of Guest(s)</th>
+					<th>Special Requirement</th>
+				</tr>
+			</thead>		
+			<tbody>	
+				<tr>
+					<td><%= @extra_reservation.restaurant_id %></td>
+					<td><%= @extra_reservation.visitingdate %></td>
+					<td><%= @extra_reservation.numberofguest %></td>
+					<td><%= @extra_reservation.specialrequirement %></td>	
+				</tr>
+			</tbody>		
+		</table>
+
+
+		<p>
+			<strong>Additional Info:</strong>
+			<%= @extra_reservation.additionalinfo %>
+		</p>
+
+	</div>
+</div>
+
+<%= link_to 'Back', extra_reservations_path %>

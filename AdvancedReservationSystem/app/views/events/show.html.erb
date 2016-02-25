@@ -1,0 +1,35 @@
+<div class="row">
+	<div class="col-md-8 col-md-offset-2 well booking">
+
+		<h3>  <%= @event.name %> </h3>
+
+
+		<p>
+			<strong>Event Date:</strong>
+			<%= @event.eventdate %>
+		</p>
+
+		<p>
+			<strong>Location:</strong>
+			<%= @event.arrival_airport.city %>
+		</p>
+		
+		<p>
+			<strong>Nearest Airport:</strong>
+			<%= @event.arrival_airport.name %>
+		</p>
+
+		<p>
+			<strong>Description:</strong>
+			<%= @event.description %>
+		</p>
+
+		<p>
+			<strong>Price:</strong>
+			<%= @event.price %>
+		</p>
+
+	</div>
+</div>
+
+<%= link_to 'Back', events_path %>

@@ -1,0 +1,96 @@
+<div class="row customer_details">
+	<div class="col-md-6 col-md-offset-3">
+
+		<div class="row">
+			<h2>Traveller(s) Details</h2>
+			<p>Please provide Traveller(s) details for flight:</p>
+
+			<div class=" col-md-12 well flight-details">
+				<div class"panel-body">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Flight Number:</th>
+								<th>Departing Airport</th>
+								<th>Arrival Airport</th>
+								<th>Departure Date</th>
+								<th>Departure Time</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td><%= @flight.id %></td>
+								<td><%= @flight.departure_airport.name %></td>
+								<td><%= @flight.arrival_airport.name %></td>
+								<td><%= @flight.departure_date.strftime("%d/%m/%Y") %></td>
+								<td><%= @flight.departure_date.strftime("%H:%M") %></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<%= form_for @reservation, :html => { :class => "form-horizontal" } do |flight|  %>
+		<% if @reservation.errors.any? %>
+		<div id="error_explanation">
+
+			<h2>
+				<%= pluralize(@reservation.errors.count, "error") %> 
+			</h2>
+ 
+			<ul>
+				<% @reservation.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
+		
+		<% customer_num = 1 %>
+
+		<%= flight.fields_for :customers do |customer| %>
+		<div class="row">
+			<div class="col-md-12 well customer-box">
+				<h3>Traveller <%= customer_num %></h3>
+				<% customer_num += 1 %>
+
+				<div class="form-group">
+					<%= customer.label :name, "Name:", class: "control-label col-md-2"%>
+					<div class="col-md-9">
+						<%= customer.text_field :name, class: "form-control"%>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<%= customer.label :email, "Email:", class: "control-label col-md-2" %>
+					<div class="col-md-9">
+						<%= customer.text_field :email, class: "form-control" %>
+					</div>
+				</div>
+			  
+				<div class="form-group">
+					<%= customer.label :address, "Address:", class: "control-label col-md-2" %>
+					<div class="col-md-9">
+						<%= customer.text_field :address, class: "form-control" %>
+					</div>
+				</div>
+
+			</div>
+		</div>
+				
+		<% end %>
+		
+				 
+		<%= hidden_field_tag(:hotel, params[:hotel]) %>
+		<%= hidden_field_tag(:customers, params[:customers]) %>
+		<%= flight.hidden_field :flight_id, value: params[:flight_id] %>
+		<%= hidden_field_tag(:flight_id, params[:flight_id]) %>
+  
+		<%= flight.submit "Book Flight", class: "btn btn-success btn-lg col-md-4 col-md-offset-4" %>
+		<% end %>
+				
+	</div>
+</div>
+

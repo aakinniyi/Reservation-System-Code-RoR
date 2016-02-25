@@ -1,0 +1,56 @@
+<div class="row search">
+	<div class="col-md-8 col-md-offset-2 well form-inline">
+
+		<%= form_for(@flight) do |f| %>
+		<% if @flight.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@flight.errors.count, "error") %> prohibited this flight from being saved:</h2>
+
+			<ul>
+				<% @flight.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
+
+		<div class="form-group">
+			<%= f.label :airline_id %><br>
+			<%= f.collection_select :airline_id, Airline.order(:name), :id, :name, :include_blank => "Select Airline"%>
+		</div>
+		<div class="form-group">
+			<%= f.label :departure_airport_id %><br>
+			<%= f.collection_select :departure_airport_id, Airport.order(:name), :id, :name, :include_blank => "Select Departure Airport"%>
+		</div>
+		<div class="form-group">
+			<%= f.label :arrival_airport_id %><br>
+			<%= f.collection_select :arrival_airport_id, Airport.order(:name), :id, :name, :include_blank => "Select Arrival Airport"%>
+		</div>
+		<div class="form-group">
+			<%= f.label :departure_date %><br>
+			<%= f.datetime_select :departure_date %>
+		</div>
+		<div class="form-group">
+			<%= f.label :duration %><br>
+			<%= f.number_field :duration %>
+		</div>
+		<div class="form-group">
+			<%= f.label :price %><br>
+			<%= f.number_field :price %>
+		</div>
+		<div class="form-group">
+			<%= f.label :availability %><br>
+			<%= f.select :availability, ['Available', 'Full'] %>
+		</div>
+		<br>
+		<div>
+			<%= f.submit %>
+		</div>
+		<% end %>
+
+		<br>
+		<%= link_to 'Back', flights_path %>
+
+	</div>
+
+</div>
